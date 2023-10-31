@@ -1,0 +1,36 @@
+name: Playwright Tests
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 20
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v2
+      with:
+       version: 8
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Run Playwright unit tests
+      run: pnpm test:unit
+
+    - name: Run Playwright integration tests
+      run: pnpm test:integration
+
+    - name: Run Playwright e2e tests
+      run: pnpm test:e2e
