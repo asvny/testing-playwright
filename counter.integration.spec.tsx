@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/experimental-ct-react";
 import AxeBuilder from "@axe-core/playwright";
 import * as React from "react";
-import { CounterForTest } from "../counter.story";
+import { CounterForTest } from "./counter.story";
 
 test("counter component has no a11y violations", async ({ mount }) => {
   const component = await mount(<CounterForTest />);
@@ -12,6 +12,8 @@ test("counter component has no a11y violations", async ({ mount }) => {
     .analyze();
 
   expect(accessibilityScanResults.violations).toEqual([]);
+
+  expect.soft;
 });
 
 test("can render counter component", async ({ mount }) => {

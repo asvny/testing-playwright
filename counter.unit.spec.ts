@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { Store, Presenter } from "../counter";
+import { Store, Presenter } from "./counter";
 
 test("store has correct value on add", async () => {
   const store = new Store();
