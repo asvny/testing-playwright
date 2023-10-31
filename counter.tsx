@@ -26,7 +26,7 @@ export function Counter(props: CounterProps) {
 
   return (
     <div>
-      <button type="button" onClick={onSubtract}>
+      <button type="button" title="increment" onClick={onSubtract}>
         -
       </button>
 
@@ -34,7 +34,7 @@ export function Counter(props: CounterProps) {
         <input readOnly value={value} />
       </label>
 
-      <button type="button" onClick={onAdd}>
+      <button type="button" title="decrement" onClick={onAdd}>
         +
       </button>
     </div>

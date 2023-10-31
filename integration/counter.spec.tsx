@@ -8,7 +8,7 @@ test("counter component has no a11y violations", async ({ mount }) => {
 
   const page = await component.page();
   const accessibilityScanResults = await new AxeBuilder({ page })
-    .withTags(["wcag2a"])
+    .withTags(["wcag2a", "wcag2aa", "wcag21a", "wcag21aa"])
     .analyze();
 
   expect(accessibilityScanResults.violations).toEqual([]);
